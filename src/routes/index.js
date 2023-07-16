@@ -1,7 +1,6 @@
 const router = require('express').Router();
+const gptController = require('../controllers/gpt.controller');
 
-router.get('/', (req, res) => {
-    res.send('Hello world')
-})
+router.post('/create/description', gptController.createDescriptions);
 
 module.exports = router;
