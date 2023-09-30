@@ -1,0 +1,14 @@
+version: '3'
+
+services:
+  generator-api:
+    build:
+      context: .
+    container_name: gen-api
+    entrypoint: sh ./.docker/entrypoint.sh
+    tty: true
+    ports:
+      - 3036:3036
+    volumes:
+      - .:/usr/generator-api/app
+    
