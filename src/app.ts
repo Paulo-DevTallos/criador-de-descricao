@@ -1,5 +1,6 @@
 import express, { Application } from 'express';
-import { ConfigService } from './services/env-config/config.service';
+import logger from 'morgan';
+import { ConfigService } from './shared/services/env-config/config.service';
 
 export class App {
     public app: Application;
@@ -14,6 +15,7 @@ export class App {
     initializeMiddlewares() {
         this.app.use(express.json());
         this.app.use(express.urlencoded({ extended: true }));
+        this.app.use(logger('dev'))
     };
 
     start() {
