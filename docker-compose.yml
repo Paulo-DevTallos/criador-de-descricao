@@ -10,5 +10,10 @@ services:
     ports:
       - 3036:3036
     volumes:
-      - .:/usr/generator-api/app
-    
+      - .:/usr/generator-api/app   
+    networks:
+      - generator
+
+networks:
+  generator:
+    driver: bridge
