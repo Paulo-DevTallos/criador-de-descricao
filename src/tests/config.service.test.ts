@@ -29,7 +29,11 @@ describe('env config testing', () => {
 
     it('should test match value for NODE_ENV', () => {
         const instance = ConfigService.getInstance(enviroment);
-        console.log(enviroment)
         expect(instance.getNodeEnv()).toBe('test');
+    });
+
+    it('should return NODE_ENV if is defined', () => {
+        process.env.NODE_ENV = 'production'
+        expect(sut.getNodeEnv()).toBe('production');
     });
 });
