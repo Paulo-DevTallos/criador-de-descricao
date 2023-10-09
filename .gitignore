@@ -5,3 +5,4 @@ coverage
 #files
 .env
 .env.development
+.env.test
