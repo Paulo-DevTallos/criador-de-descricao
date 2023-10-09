@@ -2,7 +2,7 @@ import { ConfigService } from "../shared/services/env-config/config.service";
 
 describe('env config testing', () => {
     let sut: ConfigService;
-    const enviroment = 'development';
+    const enviroment = 'test';
     sut = new ConfigService(enviroment);
 
     it('should test if ConfigService is defined', () => {
@@ -14,11 +14,22 @@ describe('env config testing', () => {
     });
 
     it('should test match value is a string value', () => {
-        expect(sut['environment']).toMatch('development');
+        expect(sut['environment']).toMatch('test');
     });
 
     it('should test if ConfigService getInstance', () => {
         const instance = ConfigService.getInstance(enviroment);
         expect(instance).toBeInstanceOf(ConfigService);
+    });
+
+    it('should test if getAppPort is calleble using getInstance', () => {
+        const instance = ConfigService.getInstance(enviroment);
+        expect(instance.getAppPort()).toBe(3036);
+    });
+
+    it('should test match value for NODE_ENV', () => {
+        const instance = ConfigService.getInstance(enviroment);
+        console.log(enviroment)
+        expect(instance.getNodeEnv()).toBe('test');
     });
 });
