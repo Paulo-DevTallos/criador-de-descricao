@@ -8,7 +8,7 @@ export class App {
 
     constructor() {
         this.app = express();
-        this.envConfig = new ConfigService('development');
+        this.envConfig = ConfigService.getInstance('development');
         this.initializeMiddlewares();
     };
 
