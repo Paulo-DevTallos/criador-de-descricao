@@ -7,7 +7,7 @@
     "start": "node server.js",
     "start:dev": "nodemon --watch 'src/' --exec 'ts-node src/main.ts' -e ts",
     "test": "jest --passWithNoTests",
-    "test:staged": "jest --passWithNoTests --watch --findRelatedTests --coveraged",
+    "test:staged": "test",
     "husky:prepare": "husky install"
   },
   "keywords": [],
