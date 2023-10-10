@@ -6,7 +6,8 @@
   "scripts": {
     "start": "node server.js",
     "start:dev": "nodemon --watch 'src/' --exec 'ts-node src/main.ts' -e ts",
-    "test": "jest --passWithNoTests"
+    "test": "jest --passWithNoTests",
+    "husky:prepare": "husky install"
   },
   "keywords": [],
   "author": "",
@@ -19,6 +20,7 @@
     "@types/morgan": "^1.9.6",
     "@types/node": "^20.8.0",
     "dotenv": "^16.3.1",
+    "husky": "^8.0.3",
     "jest": "^29.7.0",
     "morgan": "^1.10.0",
     "nodemon": "^3.0.1",
