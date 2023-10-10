@@ -1,8 +1,9 @@
+export interface GptProps {
+    title: string;
+    description: string;
+    created_at?: Date;
+    updated_at?: Date;
+}
 export class GptEntity {
-    constructor(
-        public title: string,
-        public description: string,
-        public created_at: Date,
-        public updated_at: Date,
-    ) {}
+    constructor(public readonly props: GptProps) {}
 }
